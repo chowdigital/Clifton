@@ -1,0 +1,321 @@
+/*!
+Theme Name: Cloudsdale_Theme
+Theme URI: https://cloudsdale.co.uk/fullfat
+Author: Sean Cloudsdale
+Author URI: https://cloudsdale.co.uk/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+/*-------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+/* Jetpack infinite scroll
+--------------------------------------------- */
+@import "plugins/jetpack/infinite-scroll";
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
+
+// ===========================================================================
+// My Custom Styles
+// ===========================================================================
+//
+// Table of Contents:
+//
+//  1. Header Settings
+//  2. Typography
+//  3. Navigation
+//  4. Footer
+//  5. Containers
+//  6. Buttons
+//  7. Video
+//  8. Carousel
+
+$primary: #051c2b;
+$highlight: #da6519;
+$white: #efeeeb;
+
+// ===========================================================================
+// 1. Header Settings
+// ===========================================================================
+body,
+#page,
+.view,
+html {
+  width: 100%;
+  height: 100%;
+}
+// Settings for navbar in edit mode
+
+body.logged-in {
+  nav,
+  .cm-nav,
+  #offcanvasNav {
+    margin-top: 32px;
+  }
+}
+body {
+  background-color: $primary;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+// ===========================================================================
+//  2. Typography
+// ===========================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body,
+p {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.menu-item a,
+.btn,
+button {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+// ===========================================================================
+//  3. Navigation
+// ===========================================================================
+
+.menu-toggle {
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+.navbar-toggler-icon {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.cm-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $primary;
+  height: 72px;
+}
+.cm-nav-inner {
+  position: relative;
+}
+
+.navbar-brand {
+  background-color: $white;
+  width: 200px;
+  position: absolute;
+  height: 80px;
+  top: 0;
+  left: calc(50% - 100px);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  transition: height 0.5s ease-in-out;
+
+  img {
+    left: calc(50% - 75px);
+    position: relative;
+    height: 60px;
+    top: 10px;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+.navbar-brand img {
+  width: 150px;
+  max-height: auto;
+}
+.menu-toggle {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  .menu-icon {
+    background-image: url(../cloudsdale-master/assets/icons/menu.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+  }
+}
+.social-icons {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  padding: none;
+  a {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+  }
+  .instagram-icon {
+    background-image: url(../cloudsdale-master/assets/icons/instagram.svg);
+  }
+  .facebook-icon {
+    background-image: url(../cloudsdale-master/assets/icons/facebook.svg);
+  }
+  .twitter-icon {
+    background-image: url(../cloudsdale-master/assets/icons/twitter.svg);
+  }
+}
+// ===========================================================================
+//  8. Carousel
+// ===========================================================================
+
+#loopCarousel {
+  margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.33%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.33%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+
+/* Custom CSS for the carousel indicators */
+.carousel-indicators {
+  bottom: -50px; /* Adjust the spacing from the carousel */
+  list-style: none;
+  text-align: center;
+  background-color: red;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px; /* Set the width of the circle */
+  height: 10px; /* Set the height of the circle */
+  margin: 0 5px; /* Adjust the spacing between the circles */
+  background-color: red; /* Change this to your desired color for inactive indicators */
+  border-radius: 50%; /* Make the circles round */
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background-color: blue; /* Change this to your desired color for active indicators */
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+}
