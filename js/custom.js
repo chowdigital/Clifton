@@ -42,7 +42,3 @@ function scrollFunction() {
     document.getElementById("menuToggle").style.transitionDelay = "0.1s";
   }
 }
-
-$("#loginModal").on("show.bs.modal", function (e) {
-  $("body").addClass("test");
-});

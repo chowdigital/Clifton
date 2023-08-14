@@ -66,3 +66,12 @@
 			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+
+
+	<!-- https://wpengine.co.uk/resources/add-preloader-animation-wordpress/
+	
+<div class="spinner-wrapper">
+<div class="spinner"></div>
+</div>
+
+				-->

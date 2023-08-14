@@ -88,8 +88,7 @@ Author URI: https://cloudsdale.co.uk/
 //  4. Footer
 //  5. Containers
 //  6. Buttons
-//  7. Video
-//  8. Carousel
+//  7. Blog
 
 $blue: #285a5b; //Clifton Blue
 $blue-dark: #193631; // Midnight Blue
@@ -110,6 +109,11 @@ $white: $craft;
 .bg-pink {
   background: $craft;
   background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png);
+  background-repeat: repeat;
+}
+.bg-dot {
+  background: $blue-dark;
+  background-image: url(../Clifton/assets/texture/TheClifton_Swatch_PolkaDotBlue.png);
   background-repeat: repeat;
 }
 
@@ -178,6 +182,23 @@ h4,
 h5 {
   font-family: "VCHenrietta-SemiBold", sans-serif;
   font-style: normal;
+}
+
+h2 {
+  font-family: "VCHenrietta-Regular", sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+@media (min-width: 567px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1400px) {
+  h2 {
+    font-size: 45px;
+  }
 }
 
 body,
@@ -339,11 +360,6 @@ button {
     display: flex;
     flex-direction: column;
   }
-  h2 {
-    font-family: "VCHenrietta-Regular", sans-serif;
-    font-size: 30px;
-    letter-spacing: 2px;
-  }
 }
 
 @media (min-width: 567px) {
@@ -351,9 +367,6 @@ button {
     .inner-middle-box {
       width: 60%;
       padding-left: 20%;
-    }
-    h2 {
-      font-size: 40px;
     }
   }
 }
@@ -364,10 +377,16 @@ button {
       width: 50%;
       padding-left: 25%;
     }
-    h2 {
-      font-size: 45px;
-    }
   }
+}
+
+.light-header {
+  color: $craft;
+  padding: 2em 0em;
+}
+.dark-header {
+  color: $blue-dark;
+  padding: 2em 0em;
 }
 
 // ===========================================================================
@@ -408,5 +427,86 @@ button {
   }
   &:hover {
     color: $pink;
+  }
+}
+
+.btn-light {
+  border: 5px solid $pink;
+  border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
+  border-image-repeat: repeat;
+  border-radius: 0px;
+  transition: color 0.4s;
+  background-color: $craft;
+  background-image: url(../Clifton/assets/texture/craft.png);
+  background-repeat: repeat;
+  color: $blue-dark;
+  &:visited {
+    color: $blue-dark;
+  }
+  &:hover {
+    color: $pink;
+  }
+}
+// ===========================================================================
+//  6. Gallery
+// ===========================================================================
+
+.gallery-parent {
+  display: flex;
+  flex-direction: row;
+}
+.gallery-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5em;
+}
+
+.gallery-img {
+  margin: 0.5em;
+  align-self: center;
+  border: 5px solid $pink;
+  border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
+  border-image-repeat: repeat;
+}
+.gallery-portrait-left {
+  margin-left: 38%;
+  width: 62%;
+}
+.gallery-portrait-right {
+  margin-right: 38%;
+  width: 62%;
+}
+.gallery-button {
+  padding: 2em 0em;
+}
+
+@media (max-width: 992px) {
+  .hide-lg {
+    display: none;
+  }
+}
+// ===========================================================================
+//  7. Blog
+// ===========================================================================
+.whats-on {
+  padding-bottom: 2em;
+}
+.the-blogs {
+}
+.blog-img {
+  border: 5px solid $pink;
+  border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
+  border-image-repeat: repeat;
+  margin-bottom: 1em;
+}
+.blog-post {
+}
+.blog-2-3 {
+  margin-bottom: 1em;
+}
+.blog-2-3:nth-child(2) {
+  .blog-img {
+    order: 2;
   }
 }
