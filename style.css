@@ -918,6 +918,22 @@ textarea {
 	margin-bottom: 1.5em;
 }
 
+.bg-craft {
+	background: #dfc797;
+	background-image: url(../Clifton/assets/texture/craft.png);
+	background-repeat: repeat;
+}
+
+.bg-pink {
+	background: #dfc797;
+	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png);
+	background-repeat: repeat;
+}
+
+.inset-shadow {
+	box-shadow: inset 0px 0px 5px #333;
+}
+
 body,
 #page,
 .view,
@@ -933,7 +949,7 @@ body.logged-in #offcanvasNav {
 }
 
 body {
-	background-color: #051c2b;
+	background-color: #285a5b;
 }
 
 .flex-row {
@@ -950,31 +966,42 @@ body {
 	align-self: flex-end;
 }
 
+@font-face {
+	font-family: "VCHenrietta-Regular";
+	src: url(../Clifton/assets/fonts/VCHenrietta-Regular.woff2) format("woff2"), url(../Clifton/assets/fonts/VCHenrietta-Regular.woff) format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "VCHenrietta-SemiBold";
+	src: url(../Clifton/assets/fonts/VCHenrietta-SemiBold.woff2) format("woff2"), url(../Clifton/assets/fonts/VCHenrietta-SemiBold.woff) format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-	font-family: "neue-haas-grotesk-display", sans-serif;
-	font-weight: 700;
+	font-family: "VCHenrietta-SemiBold", sans-serif;
 	font-style: normal;
 }
 
 body,
 p {
-	font-family: "neue-haas-grotesk-display", sans-serif;
-	font-weight: 500;
+	font-family: "VCHenrietta-Regular", sans-serif;
 	font-style: normal;
 }
 
 .menu-item a,
 .btn,
 button {
-	font-family: "neue-haas-grotesk-display", sans-serif;
-	font-weight: 600;
+	font-family: "VCHenrietta-Regular", sans-serif;
 	font-style: normal;
-	text-transform: lowercase;
-	letter-spacing: 1px;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
 }
 
 .menu-toggle {
@@ -995,12 +1022,28 @@ button {
 	background-size: 100%;
 }
 
+#navbar {
+	transition: height 0.6s ease-in-out;
+	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
+	background-repeat: repeat;
+}
+
+#navbrand {
+	transition: height 0.6s ease-in-out;
+	transition: width 0.6s ease-in-out;
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+
 .cm-nav {
 	position: fixed;
+	z-index: 101;
 	top: 0;
 	width: 100%;
-	background-color: #051c2b;
-	height: 72px;
+	background-color: #285a5b;
+	height: 80px;
 }
 
 .cm-nav-inner {
@@ -1008,142 +1051,175 @@ button {
 }
 
 .navbar-brand {
-	background-color: #efeeeb;
-	width: 200px;
 	position: absolute;
-	height: 80px;
-	top: 0;
-	left: calc(50% - 100px);
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	transition: height 0.5s ease-in-out;
-}
-
-.navbar-brand img {
-	left: calc(50% - 75px);
-	position: relative;
-	height: 60px;
 	top: 10px;
-	transition: 0.5s ease-in-out;
+	left: calc(50% - 80px);
+	width: 160px;
+	height: 56px;
 }
 
 .navbar-brand img {
-	width: 150px;
-	max-height: auto;
+	transition: 0.5s ease-in-out;
 }
 
 .menu-toggle {
 	position: absolute;
-	top: 15px;
+	top: 30px;
 	left: 0px;
+	margin-left: 20px;
+	transition-duration: 0.6s;
 }
 
 .menu-toggle .menu-icon {
-	background-image: url(../cloudsdale-master/assets/icons/menu.svg);
+	background-image: url(../Clifton/assets/icons/menu.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	width: 40px;
-	height: 40px;
+	width: 36.67px;
+	height: 20px;
 	display: inline-block;
 }
 
-.social-icons {
+#bookBtn {
 	position: absolute;
 	top: 20px;
 	right: 0px;
 	padding: none;
+	transition-duration: 0.6s;
+	margin-right: 20px;
 }
 
-.social-icons a {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	width: 30px;
-	height: 30px;
-	display: inline-block;
+#bookBtn a {
+	font-size: 12px;
+	padding: 6px 30px;
 }
 
-.social-icons .instagram-icon {
-	background-image: url(../cloudsdale-master/assets/icons/instagram.svg);
-}
-
-.social-icons .facebook-icon {
-	background-image: url(../cloudsdale-master/assets/icons/facebook.svg);
-}
-
-.social-icons .twitter-icon {
-	background-image: url(../cloudsdale-master/assets/icons/twitter.svg);
-}
-
-#loopCarousel {
-	margin-bottom: 50px;
-}
-
-@media (max-width: 767px) {
-	.carousel-inner .carousel-item > div {
-		display: none;
-	}
-	.carousel-inner .carousel-item > div:first-child {
-		display: block;
-	}
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
+.clifton-crest {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-attachment: fixed;
+	z-index: 1;
 	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-/* medium and up screens */
-@media (min-width: 768px) {
-	.carousel-inner .carousel-item-end.active,
-	.carousel-inner .carousel-item-next {
-		transform: translateX(33.33%);
+.clifton-crest img {
+	max-width: 300px;
+}
+
+.square-box {
+	position: relative;
+	overflow: hidden;
+}
+
+.square-box:before {
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+
+@media (max-width: 991.98px) {
+	.square-box-small {
+		position: relative;
+		overflow: hidden;
 	}
-	.carousel-inner .carousel-item-start.active,
-	.carousel-inner .carousel-item-prev {
-		transform: translateX(-33.33%);
+	.square-box-small:before {
+		content: "";
+		display: block;
+		padding-top: 100%;
 	}
 }
 
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start {
-	transform: translateX(0);
+.big-news {
+	padding: 5px;
 }
 
-/* Custom CSS for the carousel indicators */
-.carousel-indicators {
-	bottom: -50px;
-	/* Adjust the spacing from the carousel */
-	list-style: none;
-	text-align: center;
-	background-color: red;
+.text-middle-box {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-.carousel-indicators li {
-	display: inline-block;
-	width: 10px;
-	/* Set the width of the circle */
-	height: 10px;
-	/* Set the height of the circle */
-	margin: 0 5px;
-	/* Adjust the spacing between the circles */
-	background-color: red;
-	/* Change this to your desired color for inactive indicators */
-	border-radius: 50%;
-	/* Make the circles round */
-	cursor: pointer;
+.text-middle-box .inner-middle-box {
+	width: 80%;
+	padding-left: 10%;
+	display: flex;
+	flex-direction: column;
 }
 
-.carousel-indicators .active {
-	background-color: blue;
-	/* Change this to your desired color for active indicators */
+.text-middle-box h2 {
+	font-family: "VCHenrietta-Regular", sans-serif;
+	font-size: 30px;
+	letter-spacing: 2px;
 }
 
-.carousel-indicators [data-bs-target] {
-	width: 10px;
-	height: 10px;
+@media (min-width: 567px) {
+	.text-middle-box .inner-middle-box {
+		width: 60%;
+		padding-left: 20%;
+	}
+	.text-middle-box h2 {
+		font-size: 40px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.text-middle-box .inner-middle-box {
+		width: 50%;
+		padding-left: 25%;
+	}
+	.text-middle-box h2 {
+		font-size: 45px;
+	}
+}
+
+.btn {
+	border: 5px solid #d78267;
+	border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
+	border-image-repeat: repeat;
+	border-radius: 0px;
+	transition: color 0.4s;
+	background-color: #285a5b;
+}
+
+.btn-primary {
+	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
+	background-repeat: repeat;
+	color: #dfc797;
+}
+
+.btn-primary:visited {
+	color: #dfc797;
+}
+
+.btn-primary:hover {
+	color: #d78267;
+}
+
+.btn-secondary {
+	border: 5px solid #dfc797;
+	border-image: url(../Clifton/assets/texture/craft.png) 5;
+	border-image-repeat: repeat;
+	border-radius: 0px;
+	transition: color 0.4s;
+	background-color: #285a5b;
+	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
+	background-repeat: repeat;
+	color: #dfc797;
+}
+
+.btn-secondary:visited {
+	color: #dfc797;
+}
+
+.btn-secondary:hover {
+	color: #d78267;
 }
 
 /*# sourceMappingURL=style.css.map */

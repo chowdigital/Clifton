@@ -139,7 +139,6 @@ add_action( 'widgets_init', 'cloudsdale_master_widgets_init' );
  */
 function cloudsdale_master_scripts() {
 	wp_enqueue_style( 'Bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array() );
-	wp_enqueue_style( 'Typekit', 'https://use.typekit.net/liw0drb.css' );
 
 	wp_enqueue_style( 'cloudsdale-master-style', get_stylesheet_uri(), array(), $ver = 1.0 );
 	wp_style_add_data( 'cloudsdale-master-style', 'rtl', 'replace' );

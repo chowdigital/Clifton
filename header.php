@@ -29,17 +29,16 @@
 
 	<header id="masthead" class="site-header">
 
-			<div class="cm-nav shadow">
-				<div class="container cm-nav-inner">
-					<a class="menu-toggle " aria-controls="primary-menu" aria-expanded="false" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-					<div class="menu-icon shadow"></div></a>
-					<a class="navbar-brand shadow" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/vanguard-logo-text.svg" alt="Vanguard Logo" style>
+			<div id="navbar" class="cm-nav shadow">
+				<div class="container-fluid cm-nav-inner">
+					<a id="menuToggle" class="menu-toggle " aria-controls="primary-menu" aria-expanded="false" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+					<div class="menu-icon"></div>
+				</a>
+					<a id="navbrand" class="navbar-brand navbrand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.svg" alt="Cifton Logo" style>
 					</a>
-					<div class="social-icons">
-						<a class="instagram-icon shadow" target="_blank" href=""></a>
-						<a class="twitter-icon shadow"  target="_blank" href=""></a>
-						<a class="facebook-icon shadow"  target="_blank" href=""></a>
+					<div id="bookBtn">
+					<a class="btn btn-primary" href="#" role="button">Book a table</a>
 					</div>
 				</div>
 			</div>
