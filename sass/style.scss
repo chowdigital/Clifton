@@ -82,6 +82,7 @@ Author URI: https://cloudsdale.co.uk/
 //
 // Table of Contents:
 //
+// -1. Colours
 //  1. Header Settings
 //  2. Typography
 //  3. Navigation
@@ -89,6 +90,10 @@ Author URI: https://cloudsdale.co.uk/
 //  5. Containers
 //  6. Buttons
 //  7. Blog
+
+// ===========================================================================
+// -1. Colours
+// ===========================================================================
 
 $blue: #285a5b; //Clifton Blue
 $blue-dark: #193631; // Midnight Blue
@@ -106,15 +111,49 @@ $white: $craft;
   background-image: url(../Clifton/assets/texture/craft.png);
   background-repeat: repeat;
 }
-.bg-pink {
-  background: $craft;
-  background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png);
+
+.bg-dot {
+  background-image: url(../Clifton/assets/texture/dots.png);
   background-repeat: repeat;
 }
-.bg-dot {
-  background: $blue-dark;
-  background-image: url(../Clifton/assets/texture/TheClifton_Swatch_PolkaDotBlue.png);
-  background-repeat: repeat;
+
+.pink-overlay,
+.blue-overlay,
+.blue-dark-overlay,
+.green-overlay,
+.yellow-overlay {
+  position: relative;
+  z-index: 1;
+  * {
+    z-index: 100;
+  }
+}
+.pink-overlay::after,
+.blue-overlay::after,
+.blue-dark-overlay::after,
+.green-overlay::after,
+.yellow-overlay::after {
+  content: ""; // ::before and ::after both require content
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4abb9;
+  mix-blend-mode: multiply;
+}
+
+.blue-overlay::after {
+  background: #136c91;
+}
+.blue-dark-overlay::after {
+  background: #084351;
+}
+.green-overlay::after {
+  background: #32b3a3;
+}
+.yellow-overlay::after {
+  background: #fab335;
 }
 
 .inset-shadow {
@@ -304,6 +343,57 @@ button {
   }
 }
 
+// ===========================================================================
+//  4. Footer
+// ===========================================================================
+
+.footer {
+  color: $craft;
+  padding-top: 4em;
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+}
+.footer-logo {
+  img {
+    height: auto;
+    width: 200px;
+    padding-bottom: 4em;
+  }
+}
+
+// form
+.form {
+  padding-bottom: 2em;
+}
+.form-select,
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $craft;
+  border-radius: 0;
+}
+
+.form-select:focus + label,
+.form-control:focus + label {
+  color: $craft;
+}
+#floatingInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $craft;
+  border-radius: 0;
+}
+#floatingInput:focus {
+  outline: none !important;
+}
+
+.craft-text {
+  color: $craft;
+  padding: 1rem 0rem;
+}
+// form end
 // ===========================================================================
 //  5. Containers
 // ===========================================================================

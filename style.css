@@ -924,16 +924,57 @@ textarea {
 	background-repeat: repeat;
 }
 
-.bg-pink {
-	background: #dfc797;
-	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png);
+.bg-dot {
+	background-image: url(../Clifton/assets/texture/dots.png);
 	background-repeat: repeat;
 }
 
-.bg-dot {
-	background: #193631;
-	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_PolkaDotBlue.png);
-	background-repeat: repeat;
+.pink-overlay,
+.blue-overlay,
+.blue-dark-overlay,
+.green-overlay,
+.yellow-overlay {
+	position: relative;
+	z-index: 1;
+}
+
+.pink-overlay *,
+.blue-overlay *,
+.blue-dark-overlay *,
+.green-overlay *,
+.yellow-overlay * {
+	z-index: 100;
+}
+
+.pink-overlay::after,
+.blue-overlay::after,
+.blue-dark-overlay::after,
+.green-overlay::after,
+.yellow-overlay::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #f4abb9;
+	mix-blend-mode: multiply;
+}
+
+.blue-overlay::after {
+	background: #136c91;
+}
+
+.blue-dark-overlay::after {
+	background: #084351;
+}
+
+.green-overlay::after {
+	background: #32b3a3;
+}
+
+.yellow-overlay::after {
+	background: #fab335;
 }
 
 .inset-shadow {
@@ -1116,6 +1157,55 @@ button {
 #bookBtn a {
 	font-size: 12px;
 	padding: 6px 30px;
+}
+
+.footer {
+	color: #dfc797;
+	padding-top: 4em;
+}
+
+.footer ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+.footer-logo img {
+	height: auto;
+	width: 200px;
+	padding-bottom: 4em;
+}
+
+.form {
+	padding-bottom: 2em;
+}
+
+.form-select,
+.form-control {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #dfc797;
+	border-radius: 0;
+}
+
+.form-select:focus + label,
+.form-control:focus + label {
+	color: #dfc797;
+}
+
+#floatingInput {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid #dfc797;
+	border-radius: 0;
+}
+
+#floatingInput:focus {
+	outline: none !important;
+}
+
+.craft-text {
+	color: #dfc797;
+	padding: 1rem 0rem;
 }
 
 .clifton-crest {

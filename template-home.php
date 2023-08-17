@@ -11,7 +11,7 @@
 
 <div class="clifton-crest">
 
-<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_Crest.svg" alt="Cifton Logo" style>
+<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_Crest.png" alt="Cifton Logo" style>
 
 
 
@@ -29,51 +29,55 @@
 
 
 <main class="">
- <section> <!-- Big News -->
-    <div class="row bg-craft big-news">
-      <div class="col-md-6 col-xl-8 order-md-2 square-box-small inset-shadow" style="background-image:  url('http://localhost:8888/clifton/wp-content/uploads/2023/08/CD1_3289-scaled.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+<section> <!-- Big News -->
+      <div class="bg-craft">
+          <div class="row big-news">
+              <div class="col-md-6 col-xl-8 order-md-2 square-box-small inset-shadow" style="background-image:  url(' http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_3289-scaled.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+              </div>
+              <div class="col-md-6 col-xl-4 order-md-1 square-box text-middle-box">
+                <div class="inner-middle-box">
+                  <h2>Our new menu has landed</h2>
+                  <button type="button" class="btn btn-primary">Primary</button>
+                </div>
+              </div>
+          </div>
       </div>
-      <div class="col-md-6 col-xl-4 order-md-1 square-box text-middle-box">
-        <div class="inner-middle-box">
-          <h2>Our new menu has landed</h2>
-          <button type="button" class="btn btn-primary">Primary</button>
+        <div class="row big-news bg-craft pink-overlay">
+            <div class="col-md-6 col-xl-8 square-box-small inset-shadow" style="background-image:  url(' http://seanc275.sg-host.com/wp-content/uploads/2023/08/4team10.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            </div>
+            <div class="col-md-6 col-xl-4 square-box text-middle-box">
+              <div class="inner-middle-box">
+                <h2>Our new menu has landed</h2>
+                <button type="button" class="btn btn-secondary">Primary</button>
+              </div> 
+            </div>
         </div>
-        
-      </div>
-    </div>
-    <div class="row bg-pink big-news">
-      <div class="col-md-6 col-xl-8 square-box-small inset-shadow" style="background-image:  url('http://localhost:8888/clifton/wp-content/uploads/2023/08/4team10.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-      </div>
-      <div class="col-md-6 col-xl-4 square-box text-middle-box">
-        <div class="inner-middle-box">
-          <h2>Our new menu has landed</h2>
-          <button type="button" class="btn btn-secondary">Primary</button>
-        </div> 
-      </div>
-    </div>
-  </section>
-  <section class="row bg-dot">
+ 
+    </section>
+  <section class="row bg-craft blue-overlay">
+    <div class="bg-dot">
     <div class="container">
       <div class="light-header text-center">
         <h2>Gallery</h2>
       </div>
         <div class="col-12 container gallery-parent">
           <div class="gallery-col">
-            <img class="gallery-img" src="http://localhost:8888/clifton/wp-content/uploads/2023/08/CD1_7017-scaled.jpg" />
-            <img class="gallery-img gallery-portrait-left" src="http://localhost:8888/clifton/wp-content/uploads/2023/08/CD1_4337-scaled-e1692009330431.jpg" />
+            <img class="gallery-img" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_7017-scaled.jpg" />
+            <img class="gallery-img gallery-portrait-left" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_4337-scaled-e1692009330431.jpg" />
           </div>
           <div class="gallery-col gallery-col-middle">
-            <img class="gallery-img" src="http://localhost:8888/clifton/wp-content/uploads/2023/08/CD1_2383-scaled.jpg" />
+            <img class="gallery-img" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2383-scaled.jpg" />
           </div>
           <div class="gallery-col hide-lg">
-            <img class="gallery-img gallery-portrait-right" src="http://localhost:8888/clifton/wp-content/uploads/2023/08/CD1_5855.jpg" />
-            <img class="gallery-img" src="http://localhost:8888/clifton/wp-content/uploads/2023/08/CD1_2464-HDR-Edit-scaled.jpg" />
+            <img class="gallery-img gallery-portrait-right" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_5855.jpg" />
+            <img class="gallery-img" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2464-HDR-Edit-scaled.jpg" />
           </div>
         </div>
         <div class="text-center gallery-button">
           <button type="button" class="btn btn-light">Open full gallery</button>
         </div>
       </div>  
+      </div>
   </section>
   <section class="whats-on row bg-craft">
       <div class="col-12">
