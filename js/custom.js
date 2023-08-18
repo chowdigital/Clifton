@@ -14,7 +14,7 @@ items.forEach((el) => {
   }
 });
 */
-/* When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size */
+/*When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size */
 window.onscroll = function () {
   scrollFunction();
 };
@@ -24,21 +24,19 @@ function scrollFunction() {
     document.getElementById("navbar").style.height = "40px";
     document.getElementById("navbrand").style.width = "80px";
     document.getElementById("navbrand").style.height = "28px";
-    document.getElementById("navbrand").style.top = "0px";
-    document.getElementById("navbrand").style.marginLeft = "40px";
-    document.getElementById("bookBtn").style.top = "0px";
+    document.getElementById("navbrand").style.marginTop = "0px";
+    document.getElementById("bookBtn").style.marginTop = "0px";
     document.getElementById("bookBtn").style.transitionDelay = "0s";
-    document.getElementById("menuToggle").style.top = "10px";
-    document.getElementById("menuToggle").style.transitionDelay = "0s";
+    document.getElementById("menuIcon").style.marginTop = "8px";
+    document.getElementById("menuIcon").style.transitionDelay = "0s";
   } else {
     document.getElementById("navbar").style.height = "80px";
     document.getElementById("navbrand").style.width = "160px";
     document.getElementById("navbrand").style.height = "23px";
-    document.getElementById("navbrand").style.marginLeft = "0px";
-    document.getElementById("navbrand").style.top = "10px";
-    document.getElementById("bookBtn").style.top = "20px";
-    document.getElementById("menuToggle").style.top = "30px";
+    document.getElementById("navbrand").style.marginTop = "8px";
+    document.getElementById("bookBtn").style.marginTop = "18px";
+    document.getElementById("menuIcon").style.marginTop = "27px";
     document.getElementById("bookBtn").style.transitionDelay = "0.1s";
-    document.getElementById("menuToggle").style.transitionDelay = "0.1s";
+    document.getElementById("menuIcon").style.transitionDelay = "0.1s";
   }
 }

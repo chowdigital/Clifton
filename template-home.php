@@ -3,7 +3,7 @@
 <!-- Full Page Intro -->
 
   <div class="comtaner-fluid" style="height: 100vh; background-image:  url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
-  <div class="clifton-crest">
+  <div class="col-12 text-center clifton-crest">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_Crest.png" alt="Cifton Logo" style>
   </div>
 </div>

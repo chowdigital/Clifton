@@ -29,23 +29,22 @@
 
 	<header id="masthead" class="site-header">
 
-			<div id="navbar" class="cm-nav shadow">
-				<div class="container-fluid cm-nav-inner">
-					<a id="menuToggle" class="menu-toggle " aria-controls="primary-menu" aria-expanded="false" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-					<div class="menu-icon"></div>
+		
+
+
+		<nav id="site-navigation" class="main-navigation fixed-top">
+		<div id="navbar" class="cm-nav bg-craft blue-overlay shadow container-fluid">
+		
+					<a id="menuToggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+					<div id="menuIcon"></div>
 				</a>
 					<a id="navbrand" class="navbar-brand navbrand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.svg" alt="Cifton Logo" style>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.png" alt="Cifton Logo" style>
 					</a>
 					<div id="bookBtn">
-					<a class="btn btn-primary" href="#" role="button">Book a table</a>
+					<a class="btn btn-primary" href="#" role="button">Book <span class="d-none d-lg-inline">a table<span></a>
 					</div>
-				</div>
 			</div>
-
-
-		<nav id="site-navigation" class="main-navigation">
-
 			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
 				<div class="offcanvas-header">
 					<h5 class="offcanvas-title" id="offcanvasNavLabel"><?php esc_html_e( 'Menu', 'cloudsdale-master' ); ?></h5>
@@ -57,8 +56,9 @@
 						array(
 							'theme_location' => 'menu-1',
 							'menu_id'        => 'primary-menu',
-							'container'      => false,
+							'container'      => 'div',
 							'menu_class'     => 'navbar-nav',
+							
 						)
 					);
 					?>
