@@ -42,10 +42,13 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.png" alt="Cifton Logo" style>
 					</a>
 					<div id="bookBtn">
-					<a class="a-hover bg-craft pink-overlay" href="#" role="button"><span>
+					<a class="border a-hover bg-craft pink-overlay" href="#" role="button"><span>
 			
-                          <button type="button" class="btn btn-plain bg-craft blue-overlay">Book <span class="d-none d-lg-inline">a table</button>
+                          <button type="button" class="btn btn-plain bg-craft blue-overlay"><span class="btn-craft">Book</span><span class="btn-craft d-none d-lg-inline"> a table</span></button>
                         </a>  	
+
+
+
 				</div>
 
 			</div>

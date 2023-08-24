@@ -18,8 +18,8 @@
             <div class="col-md-6 col-xl-4 square-box text-middle-box">
               <div class="inner-middle-box">
                 <h2>Our new menu has landed</h2>
-                  <a class="border bg-craft pink-overlay a-hover" href="">
-                    <button type="button" class="btn bg-craft blue-overlay"><span class="btn-craft">Primary</span></button>
+                  <a class="border a-hover bg-craft blue-overlay" href="">
+                    <button type="button" class="btn bg-craft pink-overlay"><span class="btn-blue">Primary</span></button>                  
                   </a>
               </div> 
             </div>
@@ -70,10 +70,10 @@
         </div>
         <div class="row pt-5 pb-5 text-center">
  
-            <a class="border bg-craft pink-overlay a-hover width-50" href="">
+            <a class="border a-hover bg-craft pink-overlay  width-50" href="">
                 <button type="button" class="btn bg-craft blue-overlay"><span class="btn-craft">See more pictures</span></button>
               </a>  
-           
+         
       </div>  
       </div>
   </section>
