@@ -10,31 +10,40 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="blog-main" class="bg-craft pink-overlay">
+	<section class="blog-container bg-craft container pt-6 pb-6">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'cloudsdale-master' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'cloudsdale-master' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+		<div class="post-thumb " style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;"></div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
-		endwhile; // End of the loop.
-		?>
 
+		
+			
+			<div class="blog-content">
+
+			<?php
+			while ( have_posts() ) :
+				the_post();
+
+				get_template_part( 'template-parts/content', get_post_type() );
+
+				
+
+				
+
+			endwhile; // End of the loop.
+			?>
+			
+			
+		<a href="<?php echo get_home_url(); ?>/book"><button type="button" class="btn btn-primary">Book a table</button></a>
+
+		</div>
+
+	</section>
+		
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

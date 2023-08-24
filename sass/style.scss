@@ -90,6 +90,7 @@ Author URI: https://cloudsdale.co.uk/
 //  5. Containers
 //  6. Buttons
 //  7. Blog
+//  8. Single blog post
 
 // https://my.corebook.io/OJUcHwxiAK3lzsU5Bc5DvKiXiHVz7xX0/loci-1/introduction
 
@@ -107,6 +108,13 @@ $yellow: #d49229; // Alliance Yellow
 $primary: $blue;
 $highlight: $pink;
 $white: $craft;
+
+$xs: 575px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
 
 .bg-craft {
   background: $craft;
@@ -241,13 +249,13 @@ h2 {
   font-size: 30px;
   letter-spacing: 2px;
 }
-@media (min-width: 567px) {
+@media (min-width: $sm) {
   h2 {
     font-size: 40px;
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: $xl) {
   h2 {
     font-size: 45px;
   }
@@ -265,6 +273,17 @@ button {
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 1.4px;
+}
+
+a {
+  color: $blue;
+  transition-duration: 0.2s;
+}
+a:visited {
+  color: $blue;
+}
+a:hover {
+  color: $blue-dark;
 }
 
 // ===========================================================================
@@ -336,6 +355,18 @@ button {
     transition-duration: 0.6s;
   }
 }
+
+#menuIconClose {
+  background-image: url(../Clifton/assets/icons/menu-close.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  transition-duration: 0.6s;
+}
+
 #bookBtn {
   transition-duration: 0.6s;
   margin-top: 18px;
@@ -355,6 +386,41 @@ button {
     }
   }
 }
+// offcanvas start
+#loci-logo {
+  width: 100px;
+  padding: 5px 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#clifton-logo {
+  width: 160px;
+  padding: 5px 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-item {
+  color: $craft;
+  width: 100%;
+}
+.navbar-nav {
+  ul {
+    flex-direction: column;
+    li {
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+  }
+  a,
+  a:visited {
+    color: $craft;
+  }
+  a:hover {
+    color: $pink;
+  }
+}
+// off canvas end
 
 // ===========================================================================
 //  4. Footer
@@ -453,27 +519,25 @@ button {
   flex-direction: row;
   align-items: center;
   .inner-middle-box {
-    width: 80%;
-    padding-left: 10%;
+    width: 100%;
+    padding: 0% 10%;
     display: flex;
     flex-direction: column;
   }
 }
 
-@media (min-width: 567px) {
+@media (min-width: $md) {
   .text-middle-box {
     .inner-middle-box {
-      width: 60%;
-      padding-left: 20%;
+      padding: 0% 20%;
     }
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: $xxl) {
   .text-middle-box {
     .inner-middle-box {
-      width: 50%;
-      padding-left: 25%;
+      padding: 0% 25%;
     }
   }
 }
@@ -490,6 +554,7 @@ button {
 // ===========================================================================
 //  6. Buttons
 // ===========================================================================
+/*
 .btn {
   width: 100%;
   height: 100%;
@@ -528,51 +593,77 @@ button {
     color: $blue;
   }
 }
-
+*/
 // hover effect
 
 .a-hover {
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+  transition: box-shadow 0.3s ease-in-out;
 }
 .a-hover:hover {
+  transition: box-shadow 0.3s ease-in-out;
   box-shadow:
     0 6px 8px 0 rgba(0, 0, 0, 0.24),
     0 10px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
-// full width button on mobile
-
-@media (min-width: 992px) {
-  .width-50 {
-    width: 50%;
-    left: 25%;
-  }
+.btn {
+  border: 5px solid;
+  border-image-outset: 0;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 100px;
+  border-image-repeat: repeat;
+  border-radius: 0px;
+  transition: color 0.4s;
+  background-repeat: repeat;
+  width: 100%;
+  border-image-outset: 3px;
 }
 
-/*
 .btn-primary {
-  background-repeat: repeat;
+  border: 5px solid;
+  border-image: url(../Clifton/assets/texture/pink-xs.png) 5;
+  background-image: url(../Clifton/assets/texture/blue-xs.png);
+  border-color: $pink;
+  background-color: $blue;
   color: $craft;
-
-  &:visited {
+  &:visited,
+  &:hover {
     color: $craft;
   }
+}
+.btn-secondary {
+  border-image: url(../Clifton/assets/texture/craft-xs.png) 5;
+  background-image: url(../Clifton/assets/texture/blue-xs.png);
+  color: $craft;
+  &:visited,
   &:hover {
-    color: $pink;
+    color: $craft;
   }
 }
-
-
+.btn-light {
+  border-image: url(../Clifton/assets/texture/pink-xs.png) 5;
+  background-image: url(../Clifton/assets/texture/craft-xs.png);
+  color: $blue;
+  &:visited,
+  &:hover {
+    color: $blue;
+  }
+}
+.btn-50 {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*
 .btn-secondary {
   border: 5px solid $craft;
-  border-image: url(../Clifton/assets/texture/craft.png) 5;
+  border-image: url(../Clifton/assets/texture/craft-xs.png) 5;
   border-image-repeat: repeat;
   border-radius: 0px;
   transition: color 0.4s;
   background-color: $blue;
-  background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
+  background-image: url(../Clifton/assets/texture/blue-xs.png);
   background-repeat: repeat;
   color: $craft;
   &:visited {
@@ -638,7 +729,7 @@ button {
   padding: 2em 0em;
 }
 
-@media (max-width: 992px) {
+@media (max-width: $lg) {
   .hide-lg {
     display: none;
   }
@@ -657,10 +748,95 @@ button {
 .blog-2-3 {
   margin-bottom: 1em;
 }
-@media (min-width: 1200px) {
+@media (min-width: $xl) {
   .blog-2-3:nth-child(2) {
     .border {
       order: 2;
     }
+  }
+}
+
+// ===========================================================================
+//  8. Single Blog Post
+// ===========================================================================
+#blog-main {
+  padding-top: 400px;
+  padding-bottom: 200px;
+}
+.blog-container {
+  position: relative;
+  padding: 0px 10px;
+}
+.blog-content {
+  top: -100px;
+  position: relative;
+}
+.post-thumb {
+  height: 400px;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  z-index: 3;
+  top: -200px;
+}
+@media (min-width: $md) {
+  .blog-container {
+    padding: 0px 20px;
+  }
+}
+@media (min-width: $lg) {
+  .blog-container {
+    padding: 0px 50px;
+  }
+}
+@media (min-width: $xl) {
+  .post-thumb {
+    margin-right: 0px;
+  }
+  .blog-container {
+    padding: 0px 100px;
+  }
+}
+@media (min-width: $xxl) {
+  .blog-container {
+    padding: 0px 200px;
+  }
+}
+
+// ===========================================================================
+//  9. Default Page
+// ===========================================================================
+
+#page-main {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.page-container {
+  position: relative;
+  padding: 10px 10px;
+}
+.page-content {
+  position: relative;
+}
+@media (min-width: $md) {
+  .page-container {
+    padding: 20px 20px;
+  }
+}
+@media (min-width: $lg) {
+  .page-container {
+    padding: 50px 50px;
+  }
+}
+@media (min-width: $xl) {
+  .page-container {
+    padding: 100px 100px;
+  }
+}
+@media (min-width: $xxl) {
+  .page-container {
+    padding: 200px 200px;
   }
 }

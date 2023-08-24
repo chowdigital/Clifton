@@ -20,16 +20,15 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
+			<!-- <div class="entry-meta">
 				<?php
 				cloudsdale_master_posted_on();
 				cloudsdale_master_posted_by();
 				?>
-			</div><!-- .entry-meta -->
+			</div>--><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php cloudsdale_master_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

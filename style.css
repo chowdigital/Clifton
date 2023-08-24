@@ -1042,13 +1042,13 @@ h2 {
 	letter-spacing: 2px;
 }
 
-@media (min-width: 567px) {
+@media (min-width: 576px) {
 	h2 {
 		font-size: 40px;
 	}
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
 	h2 {
 		font-size: 45px;
 	}
@@ -1067,6 +1067,19 @@ button {
 	font-style: normal;
 	text-transform: uppercase;
 	letter-spacing: 1.4px;
+}
+
+a {
+	color: #285a5b;
+	transition-duration: 0.2s;
+}
+
+a:visited {
+	color: #285a5b;
+}
+
+a:hover {
+	color: #193631;
 }
 
 .menu-toggle {
@@ -1140,6 +1153,17 @@ button {
 	transition-duration: 0.6s;
 }
 
+#menuIconClose {
+	background-image: url(../Clifton/assets/icons/menu-close.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	transition-duration: 0.6s;
+}
+
 #bookBtn {
 	transition-duration: 0.6s;
 	margin-top: 18px;
@@ -1158,6 +1182,44 @@ button {
 	#bookBtn a {
 		font-size: 12px;
 	}
+}
+
+#loci-logo {
+	width: 100px;
+	padding: 5px 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#clifton-logo {
+	width: 160px;
+	padding: 5px 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-item {
+	color: #dfc797;
+	width: 100%;
+}
+
+.navbar-nav ul {
+	flex-direction: column;
+}
+
+.navbar-nav ul li {
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.navbar-nav a,
+.navbar-nav a:visited {
+	color: #dfc797;
+}
+
+.navbar-nav a:hover {
+	color: #d78267;
 }
 
 .footer {
@@ -1257,23 +1319,21 @@ button {
 }
 
 .text-middle-box .inner-middle-box {
-	width: 80%;
-	padding-left: 10%;
+	width: 100%;
+	padding: 0% 10%;
 	display: flex;
 	flex-direction: column;
 }
 
-@media (min-width: 567px) {
+@media (min-width: 768px) {
 	.text-middle-box .inner-middle-box {
-		width: 60%;
-		padding-left: 20%;
+		padding: 0% 20%;
 	}
 }
 
 @media (min-width: 1400px) {
 	.text-middle-box .inner-middle-box {
-		width: 50%;
-		padding-left: 25%;
+		padding: 0% 25%;
 	}
 }
 
@@ -1287,88 +1347,117 @@ button {
 	padding: 2em 0em;
 }
 
+/*
 .btn {
-	width: 100%;
-	height: 100%;
-	border-radius: 0px;
-	transition: color 0.4s;
-	position: relative;
-	z-index: 100;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  transition: color 0.4s;
+  position: relative;
+  z-index: 100;
 }
 
 .btn-plain {
-	width: auto;
-	padding: 0.375rem 2rem;
+  width: auto;
+  padding: 0.375rem 2rem;
 }
+
+// span button text
 
 .btn-craft {
-	position: relative;
-	z-index: 101;
-	color: #dfc797;
-}
-
-.btn-craft:visited {
-	color: #dfc797;
-}
-
-.btn-craft:hover {
-	color: #dfc797;
-}
-
-.btn-blue {
-	position: relative;
-	z-index: 101;
-	color: #285a5b;
-}
-
-.btn-blue:visited {
-	color: #285a5b;
-}
-
-.btn-blue:hover {
-	color: #285a5b;
-}
-
-.a-hover {
-	-webkit-transition-duration: 0.4s;
-	/* Safari */
-	transition-duration: 0.4s;
-}
-
-.a-hover:hover {
-	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
-}
-
-@media (min-width: 992px) {
-	.width-50 {
-		width: 50%;
-		left: 25%;
-	}
-}
-
-/*
-.btn-primary {
-  background-repeat: repeat;
+  position: relative;
+  z-index: 101;
   color: $craft;
-
   &:visited {
     color: $craft;
   }
   &:hover {
-    color: $pink;
+    color: $craft;
   }
 }
+.btn-blue {
+  position: relative;
+  z-index: 101;
+  color: $blue;
+  &:visited {
+    color: $blue;
+  }
+  &:hover {
+    color: $blue;
+  }
+}
+*/
+.a-hover {
+	transition: box-shadow 0.3s ease-in-out;
+}
 
+.a-hover:hover {
+	transition: box-shadow 0.3s ease-in-out;
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn {
+	border: 5px solid;
+	border-image-outset: 0;
+	border-image-slice: 100%;
+	border-image-source: none;
+	border-image-width: 100px;
+	border-image-repeat: repeat;
+	border-radius: 0px;
+	transition: color 0.4s;
+	background-repeat: repeat;
+	width: 100%;
+	border-image-outset: 3px;
+}
+
+.btn-primary {
+	border: 5px solid;
+	border-image: url(../Clifton/assets/texture/pink-xs.png) 5;
+	background-image: url(../Clifton/assets/texture/blue-xs.png);
+	border-color: #d78267;
+	background-color: #285a5b;
+	color: #dfc797;
+}
+
+.btn-primary:visited, .btn-primary:hover {
+	color: #dfc797;
+}
+
+.btn-secondary {
+	border-image: url(../Clifton/assets/texture/craft-xs.png) 5;
+	background-image: url(../Clifton/assets/texture/blue-xs.png);
+	color: #dfc797;
+}
+
+.btn-secondary:visited, .btn-secondary:hover {
+	color: #dfc797;
+}
+
+.btn-light {
+	border-image: url(../Clifton/assets/texture/pink-xs.png) 5;
+	background-image: url(../Clifton/assets/texture/craft-xs.png);
+	color: #285a5b;
+}
+
+.btn-light:visited, .btn-light:hover {
+	color: #285a5b;
+}
+
+.btn-50 {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /*
 .btn-secondary {
   border: 5px solid $craft;
-  border-image: url(../Clifton/assets/texture/craft.png) 5;
+  border-image: url(../Clifton/assets/texture/craft-xs.png) 5;
   border-image-repeat: repeat;
   border-radius: 0px;
   transition: color 0.4s;
   background-color: $blue;
-  background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
+  background-image: url(../Clifton/assets/texture/blue-xs.png);
   background-repeat: repeat;
   color: $craft;
   &:visited {
@@ -1451,6 +1540,96 @@ button {
 @media (min-width: 1200px) {
 	.blog-2-3:nth-child(2) .border {
 		order: 2;
+	}
+}
+
+#blog-main {
+	padding-top: 400px;
+	padding-bottom: 200px;
+}
+
+.blog-container {
+	position: relative;
+	padding: 0px 10px;
+}
+
+.blog-content {
+	top: -100px;
+	position: relative;
+}
+
+.post-thumb {
+	height: 400px;
+	width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	z-index: 3;
+	top: -200px;
+}
+
+@media (min-width: 768px) {
+	.blog-container {
+		padding: 0px 20px;
+	}
+}
+
+@media (min-width: 992px) {
+	.blog-container {
+		padding: 0px 50px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.post-thumb {
+		margin-right: 0px;
+	}
+	.blog-container {
+		padding: 0px 100px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.blog-container {
+		padding: 0px 200px;
+	}
+}
+
+#page-main {
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+
+.page-container {
+	position: relative;
+	padding: 10px 10px;
+}
+
+.page-content {
+	position: relative;
+}
+
+@media (min-width: 768px) {
+	.page-container {
+		padding: 20px 20px;
+	}
+}
+
+@media (min-width: 992px) {
+	.page-container {
+		padding: 50px 50px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.page-container {
+		padding: 100px 100px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.page-container {
+		padding: 200px 200px;
 	}
 }
 

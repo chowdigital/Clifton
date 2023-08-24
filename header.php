@@ -41,23 +41,18 @@
 					<a id="navbrand" class="navbar-brand navbrand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.png" alt="Cifton Logo" style>
 					</a>
-					<div id="bookBtn">
-					<a class="border a-hover bg-craft pink-overlay" href="#" role="button"><span>
-			
-                          <button type="button" class="btn btn-plain bg-craft blue-overlay"><span class="btn-craft">Book</span><span class="btn-craft d-none d-lg-inline"> a table</span></button>
-                        </a>  	
-
-
-
-				</div>
-
+					<div id="bookBtn" style="top: 20px; transition-delay: 0.1s;">
+					<a class="btn btn-primary a-hover" href="#" role="button">Book<span class="d-none d-lg-inline"> a table</span></a>
+					</div>
 			</div>
 			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title" id="offcanvasNavLabel"><?php esc_html_e( 'Menu', 'cloudsdale-master' ); ?></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				<div class="offcanvas-header bg-craft blue-overlay">
+				<a id="clifton-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.png" alt="Cifton Logo" style=""></a>			
+					<a class="" data-bs-dismiss="offcanvas" aria-label="Close">
+					<div id="menuIconClose"></div>
+				</a>
 				</div>
-				<div class="offcanvas-body">
+				<div class="offcanvas-body bg-craft blue-overlay">
 					<?php
 					wp_nav_menu(
 						array(
@@ -70,6 +65,9 @@
 					);
 					?>
 				</div>
+				<div class="modal-footer bg-craft">
+        			<a id="loci-logo" href=""><img  src="<?php echo get_template_directory_uri(); ?>/assets/logos/loci.png" alt=""></a>
+      			</div>
 			</div>
 		</nav><!-- #site-navigation -->
 		

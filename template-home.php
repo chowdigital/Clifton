@@ -18,8 +18,8 @@
             <div class="col-md-6 col-xl-4 square-box text-middle-box">
               <div class="inner-middle-box">
                 <h2>Our new menu has landed</h2>
-                  <a class="border a-hover bg-craft blue-overlay" href="">
-                    <button type="button" class="btn bg-craft pink-overlay"><span class="btn-blue">Primary</span></button>                  
+                  <a class="a-hover" href="">
+                    <button type="button" class="btn btn-primary">Primary</button>                  
                   </a>
               </div> 
             </div>
@@ -30,8 +30,8 @@
             <div class="col-md-6 col-xl-4 square-box text-middle-box">
               <div class="inner-middle-box">
                 <h2>Our new menu has landed</h2>
-                  <a class="border bg-craft a-hover" href="">
-                    <button type="button" class="btn bg-craft blue-overlay"><span class="btn-craft">Primary</span></button>
+                <a class="a-hover" href="">
+                    <button type="button" class="btn btn-secondary">Secondary</button>                  
                   </a>
               </div> 
             </div>
@@ -68,10 +68,10 @@
  
           </div>
         </div>
-        <div class="row pt-5 pb-5 text-center">
+        <div class="btn-50 pt-5 pb-5">
  
-            <a class="border a-hover bg-craft pink-overlay  width-50" href="">
-                <button type="button" class="btn bg-craft blue-overlay"><span class="btn-craft">See more pictures</span></button>
+            <a class="a-hover" href="">
+                <button type="button" class="btn btn-light">See more pictures</button>
               </a>  
          
       </div>  
@@ -85,7 +85,7 @@
       <div class="container">
 
       <div class="row g-5">
-        <div class="col-12 col-lg-8 col-xl-6">
+        <div class="col-12 col-lg-7 col-xl-6">
          <?php $the_query = new WP_Query( 'cat=1&posts_per_page=1' );
                       if ( $the_query->have_posts() ) {
                       while ( $the_query->have_posts() ) { $the_query->the_post();  $category = get_the_category();  ?>		
@@ -95,19 +95,19 @@
                       </div>
 
                       </a>
-                      <div class="blog-content">
+                      <div class="">
                         <h3 class="pt-4"> <?php the_title(); ?> </h3>
                         <div class="" >  <?php the_excerpt(); ?>  
                         </div>
                         <a class="a-hover" href="">
-                          <button type="button" class="btn btn-plain bg-craft blue-overlay"><span class="btn-craft">more</span></button>
+                          <button type="button" class="btn btn-primary">more</button>
                         </a>  
                       </div>
                     </div>
           <?php $counter++; } /* end while*/ } /* end if */ wp_reset_postdata(); ?>
 
         </div>
-        <div class="col-8 col-lg-4 col-xl-6 d-none d-lg-block">
+        <div class="col-8 col-lg-5 col-xl-6 d-none d-lg-block">
 
           <?php $the_query = new WP_Query( 'cat=1&posts_per_page=2&offset=1' );
                       if ( $the_query->have_posts() ) {
@@ -119,12 +119,12 @@
                         </div>
                   
                       </a>
-                      <div class="col-12 col-xl-4 blog-content g-lg-0 g-xl-5 pt-lg-4 pt-xl-0">
+                      <div class="col-12 col-xl-4 g-lg-0 g-xl-5 pt-lg-2 pt-xl-0">
                         <h3 class=""> <?php the_title(); ?> </h3>
-                      <p>  <?php echo wp_trim_words(get_the_excerpt(), 8); ?>  
+                      <p class="d-none d-xxl-block">  <?php echo wp_trim_words(get_the_excerpt(), 8); ?>  
                       </p>
                       <a class="a-hover" href="">
-                          <button type="button" class="btn btn-plain bg-craft blue-overlay"><span class="btn-craft">more</span></button>
+                          <button type="button" class="btn btn-primary">more</button>
                         </a>                        </div>
                     </div>
           <?php $counter++; } /* end while*/ } /* end if */ wp_reset_postdata(); ?>
