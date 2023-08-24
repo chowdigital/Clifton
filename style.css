@@ -953,10 +953,10 @@ textarea {
 .yellow-overlay::after {
 	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	top: -1px;
+	left: -1px;
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
 	background: #f4abb9;
 	mix-blend-mode: multiply;
 }
@@ -975,6 +975,16 @@ textarea {
 
 .yellow-overlay::after {
 	background: #fab335;
+}
+
+.border {
+	padding: 5px;
+	margin: 0px;
+	border: 0px solid transparent !important;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .inset-shadow {
@@ -1157,7 +1167,6 @@ button {
 	}
 	#bookBtn a {
 		font-size: 12px;
-		padding: 6px 30px;
 	}
 }
 
@@ -1289,68 +1298,92 @@ button {
 }
 
 .btn {
-	border: 5px solid #d78267;
-	border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
-	border-image-repeat: repeat;
+	width: 100%;
 	border-radius: 0px;
 	transition: color 0.4s;
-	background-color: #285a5b;
+	position: relative;
+	z-index: 100;
 }
 
-.btn-primary {
-	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
-	background-repeat: repeat;
+.btn-plain {
+	width: auto;
+	padding: 0.375rem 2rem;
+}
+
+.btn-craft {
+	position: relative;
+	z-index: 101;
 	color: #dfc797;
 }
 
-.btn-primary:visited {
+.btn-craft:visited {
 	color: #dfc797;
 }
 
-.btn-primary:hover {
-	color: #d78267;
+.btn-blue {
+	position: relative;
+	z-index: 101;
+	color: #285a5b;
 }
 
+.btn-blue:visited {
+	color: #285a5b;
+}
+
+.a-hover {
+	-webkit-transition-duration: 0.4s;
+	/* Safari */
+	transition-duration: 0.4s;
+}
+
+.a-hover:hover {
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (min-width: 992px) {
+	.width-50 {
+		width: 50%;
+		left: 25%;
+	}
+}
+
+/*
 .btn-secondary {
-	border: 5px solid #dfc797;
-	border-image: url(../Clifton/assets/texture/craft.png) 5;
-	border-image-repeat: repeat;
-	border-radius: 0px;
-	transition: color 0.4s;
-	background-color: #285a5b;
-	background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
-	background-repeat: repeat;
-	color: #dfc797;
-}
-
-.btn-secondary:visited {
-	color: #dfc797;
-}
-
-.btn-secondary:hover {
-	color: #d78267;
+  border: 5px solid $craft;
+  border-image: url(../Clifton/assets/texture/craft.png) 5;
+  border-image-repeat: repeat;
+  border-radius: 0px;
+  transition: color 0.4s;
+  background-color: $blue;
+  background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
+  background-repeat: repeat;
+  color: $craft;
+  &:visited {
+    color: $craft;
+  }
+  &:hover {
+    color: $pink;
+  }
 }
 
 .btn-light {
-	border: 5px solid #d78267;
-	border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
-	border-image-repeat: repeat;
-	border-radius: 0px;
-	transition: color 0.4s;
-	background-color: #dfc797;
-	background-image: url(../Clifton/assets/texture/craft.png);
-	background-repeat: repeat;
-	color: #193631;
+  border: 5px overlay $pink;
+  border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
+  border-image-repeat: repeat;
+  border-radius: 0px;
+  transition: color 0.4s;
+  background-color: $craft;
+  background-image: url(../Clifton/assets/texture/craft.png);
+  background-repeat: repeat;
+  color: $blue-dark;
+  &:visited {
+    color: $blue-dark;
+  }
+  &:hover {
+    color: $pink;
+  }
 }
-
-.btn-light:visited {
-	color: #193631;
-}
-
-.btn-light:hover {
-	color: #d78267;
-}
-
+*/
 .gallery-parent {
 	display: flex;
 	flex-direction: row;
@@ -1365,10 +1398,13 @@ button {
 
 .gallery-img {
 	margin: 0.5em;
+	padding: 5px;
 	align-self: center;
-	border: 5px solid #d78267;
-	border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
-	border-image-repeat: repeat;
+}
+
+.gallery-img img {
+	position: relative;
+	z-index: 101;
 }
 
 .gallery-portrait-left {
@@ -1395,19 +1431,14 @@ button {
 	padding-bottom: 2em;
 }
 
-.blog-img {
-	border: 5px solid #d78267;
-	border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
-	border-image-repeat: repeat;
-	margin-bottom: 1em;
-}
-
 .blog-2-3 {
 	margin-bottom: 1em;
 }
 
-.blog-2-3:nth-child(2) .blog-img {
-	order: 2;
+@media (min-width: 1200px) {
+	.blog-2-3:nth-child(2) .border {
+		order: 2;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */

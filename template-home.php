@@ -18,7 +18,9 @@
             <div class="col-md-6 col-xl-4 square-box text-middle-box">
               <div class="inner-middle-box">
                 <h2>Our new menu has landed</h2>
-                <button type="button" class="btn btn-secondary">Primary</button>
+                  <a class="border bg-craft pink-overlay a-hover" href="">
+                    <button type="button" class="btn bg-craft blue-overlay"><span class="btn-craft">Primary</span></button>
+                  </a>
               </div> 
             </div>
         </div>
@@ -28,7 +30,9 @@
             <div class="col-md-6 col-xl-4 square-box text-middle-box">
               <div class="inner-middle-box">
                 <h2>Our new menu has landed</h2>
-                <button type="button" class="btn btn-secondary">Primary</button>
+                  <a class="border bg-craft a-hover" href="">
+                    <button type="button" class="btn bg-craft blue-overlay"><span class="btn-craft">Primary</span></button>
+                  </a>
               </div> 
             </div>
         </div>
@@ -42,20 +46,34 @@
       </div>
         <div class="col-12 container gallery-parent">
           <div class="gallery-col">
-            <img class="gallery-img" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_7017-scaled.jpg" />
-            <img class="gallery-img gallery-portrait-left" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_4337-scaled-e1692009330431.jpg" />
+            <div class="gallery-img pink-border bg-craft pink-overlay">
+             <img  src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_7017-scaled.jpg" />
+            </div>
+            <div class="gallery-img bg-craft pink-overlay gallery-portrait-left">
+              <img src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_4337-scaled-e1692009330431.jpg" />
+            </div>
           </div>
           <div class="gallery-col gallery-col-middle">
-            <img class="gallery-img" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2383-scaled.jpg" />
-          </div>
+           <div class="gallery-img bg-craft pink-overlay">
+              <img src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2383-scaled.jpg" />
+            </div>
+            </div>
           <div class="gallery-col hide-lg">
-            <img class="gallery-img gallery-portrait-right" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_5855.jpg" />
-            <img class="gallery-img" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2464-HDR-Edit-scaled.jpg" />
+            <div class="gallery-img bg-craft pink-overlay gallery-portrait-right">
+            <img class="" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_5855.jpg" />
+            </div>
+            <div class="gallery-img bg-craft pink-overlay">
+              <img  src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2464-HDR-Edit-scaled.jpg" />
+            </div>
+ 
           </div>
         </div>
-        <div class="text-center gallery-button">
-          <button type="button" class="btn btn-light">Open full gallery</button>
-        </div>
+        <div class="row pt-5 pb-5 text-center">
+ 
+            <a class="border bg-craft pink-overlay a-hover width-50" href="">
+                <button type="button" class="btn bg-craft blue-overlay"><span class="btn-craft">See more pictures</span></button>
+              </a>  
+           
       </div>  
       </div>
   </section>
@@ -67,37 +85,47 @@
       <div class="container">
 
       <div class="row g-5">
-        <div class="col-12 col-lg-4 col-xl-6">
+        <div class="col-12 col-lg-8 col-xl-6">
          <?php $the_query = new WP_Query( 'cat=1&posts_per_page=1' );
                       if ( $the_query->have_posts() ) {
                       while ( $the_query->have_posts() ) { $the_query->the_post();  $category = get_the_category();  ?>		
-                    <div class="">
-                      <div class="square-box blog-img" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                    <div class="row">
+                    <a href="<?php echo get_permalink() ?>" class="border bg-craft pink-overlay" >
+                      <div  class="square-box" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
                       </div>
+
+                      </a>
                       <div class="blog-content">
-                        <h3 class=""> <?php the_title(); ?> </h3>
+                        <h3 class="pt-4"> <?php the_title(); ?> </h3>
                         <div class="" >  <?php the_excerpt(); ?>  
                         </div>
-                        <a href="<?php echo get_permalink() ?>"><button type="button" class="btn btn-primary">Read more</button></a>
+                        <a class="a-hover" href="">
+                          <button type="button" class="btn btn-plain bg-craft blue-overlay"><span class="btn-craft">more</span></button>
+                        </a>  
                       </div>
                     </div>
           <?php $counter++; } /* end while*/ } /* end if */ wp_reset_postdata(); ?>
 
         </div>
-        <div class="col-8 col-xl-6 d-none d-lg-block">
+        <div class="col-8 col-lg-4 col-xl-6 d-none d-lg-block">
 
           <?php $the_query = new WP_Query( 'cat=1&posts_per_page=2&offset=1' );
                       if ( $the_query->have_posts() ) {
                       while ( $the_query->have_posts() ) { $the_query->the_post();  $category = get_the_category();  ?>		
-                    <div class="row blog-2-3 g-5">
-                      <div class="col-6 col-xl-8 square-box blog-img" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
-                      </div>
-                      <div class="col-6 col-xl-4 blog-content">
+                    <div class="row blog-2-3">
+                   
+                    <a href="<?php echo get_permalink() ?>" class="col-12 col-xl-8 border bg-craft pink-overlay" >
+                        <div class="square-box" style="background-image: url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                        </div>
+                  
+                      </a>
+                      <div class="col-12 col-xl-4 blog-content g-lg-0 g-xl-5 pt-lg-4 pt-xl-0">
                         <h3 class=""> <?php the_title(); ?> </h3>
-                      <p>  <?php echo wp_trim_words(get_the_excerpt(), 15); ?>  
+                      <p>  <?php echo wp_trim_words(get_the_excerpt(), 8); ?>  
                       </p>
-                        <a href="<?php echo get_permalink() ?>"><button type="button" class="btn btn-primary">more</button></a>
-                      </div>
+                      <a class="a-hover" href="">
+                          <button type="button" class="btn btn-plain bg-craft blue-overlay"><span class="btn-craft">more</span></button>
+                        </a>                        </div>
                     </div>
           <?php $counter++; } /* end while*/ } /* end if */ wp_reset_postdata(); ?>
 

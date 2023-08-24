@@ -42,8 +42,12 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.png" alt="Cifton Logo" style>
 					</a>
 					<div id="bookBtn">
-					<a class="btn btn-primary" href="#" role="button">Book <span class="d-none d-lg-inline">a table<span></a>
-					</div>
+					<a class="a-hover bg-craft pink-overlay" href="#" role="button"><span>
+			
+                          <button type="button" class="btn btn-plain bg-craft blue-overlay">Book <span class="d-none d-lg-inline">a table</button>
+                        </a>  	
+				</div>
+
 			</div>
 			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
 				<div class="offcanvas-header">

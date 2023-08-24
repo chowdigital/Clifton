@@ -137,10 +137,10 @@ $white: $craft;
 .yellow-overlay::after {
   content: ""; // ::before and ::after both require content
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   background: #f4abb9;
   mix-blend-mode: multiply;
 }
@@ -156,6 +156,16 @@ $white: $craft;
 }
 .yellow-overlay::after {
   background: #fab335;
+}
+
+.border {
+  padding: 5px;
+  margin: 0px;
+  border: 0px solid transparent !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .inset-shadow {
@@ -341,7 +351,6 @@ button {
   #bookBtn {
     a {
       font-size: 12px;
-      padding: 6px 30px;
     }
   }
 }
@@ -481,25 +490,50 @@ button {
 //  6. Buttons
 // ===========================================================================
 .btn {
-  border: 5px solid $pink;
-  border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
-  border-image-repeat: repeat;
+  width: 100%;
   border-radius: 0px;
   transition: color 0.4s;
-  background-color: $blue;
+  position: relative;
+  z-index: 100;
 }
-.btn-primary {
-  background-image: url(../Clifton/assets/texture/TheClifton_Swatch_Blue.png);
-  background-repeat: repeat;
+.btn-plain {
+  width: auto;
+  padding: 0.375rem 2rem;
+}
+.btn-craft {
+  position: relative;
+  z-index: 101;
   color: $craft;
   &:visited {
     color: $craft;
   }
-  &:hover {
-    color: $pink;
+}
+.btn-blue {
+  position: relative;
+  z-index: 101;
+  color: $blue;
+  &:visited {
+    color: $blue;
   }
 }
 
+.a-hover {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.a-hover:hover {
+  box-shadow:
+    0 6px 8px 0 rgba(0, 0, 0, 0.24),
+    0 10px 25px 0 rgba(0, 0, 0, 0.19);
+}
+@media (min-width: 992px) {
+  .width-50 {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+/*
 .btn-secondary {
   border: 5px solid $craft;
   border-image: url(../Clifton/assets/texture/craft.png) 5;
@@ -519,7 +553,7 @@ button {
 }
 
 .btn-light {
-  border: 5px solid $pink;
+  border: 5px overlay $pink;
   border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
   border-image-repeat: repeat;
   border-radius: 0px;
@@ -535,6 +569,7 @@ button {
     color: $pink;
   }
 }
+*/
 // ===========================================================================
 //  6. Gallery
 // ===========================================================================
@@ -552,11 +587,14 @@ button {
 
 .gallery-img {
   margin: 0.5em;
+  padding: 5px;
   align-self: center;
-  border: 5px solid $pink;
-  border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
-  border-image-repeat: repeat;
+  img {
+    position: relative;
+    z-index: 101;
+  }
 }
+
 .gallery-portrait-left {
   margin-left: 38%;
   width: 62%;
@@ -582,19 +620,16 @@ button {
 }
 .the-blogs {
 }
-.blog-img {
-  border: 5px solid $pink;
-  border-image: url(../Clifton/assets/texture/TheClifton_Swatch_Pink.png) 5;
-  border-image-repeat: repeat;
-  margin-bottom: 1em;
-}
+
 .blog-post {
 }
 .blog-2-3 {
   margin-bottom: 1em;
 }
-.blog-2-3:nth-child(2) {
-  .blog-img {
-    order: 2;
+@media (min-width: 1200px) {
+  .blog-2-3:nth-child(2) {
+    .border {
+      order: 2;
+    }
   }
 }
