@@ -13,9 +13,9 @@
 <main class="container-fluid">
 <section> <!-- Big News -->
 <div class="row big-news bg-craft">
-            <div class="col-md-6 col-xl-8 square-box-small inset-shadow" style="background-image:  url(' http://seanc275.sg-host.com/wp-content/uploads/2023/08/4team10.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            <div class="col-md-6 col-xl-8 order-md-2 square-box-small inset-shadow" style="background-image:  url(' http://seanc275.sg-host.com/wp-content/uploads/2023/08/4team10.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
             </div>
-            <div class="col-md-6 col-xl-4 square-box text-middle-box">
+            <div class="col-md-6 col-xl-4 order-md-1 square-box text-middle-box">
               <div class="inner-middle-box">
                 <h2>Our new menu has landed</h2>
                   <a class="a-hover" href="">

@@ -22,6 +22,12 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div id="loading" class="bg-craft blue-overlay">
+<div class="col-12 text-center clifton-crest">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_Crest.png" alt="Cifton Logo" style>
+  </div>
+</div>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cloudsdale-master' ); ?></a>
 

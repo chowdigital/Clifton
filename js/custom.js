@@ -40,3 +40,38 @@ function scrollFunction() {
     document.getElementById("menuIcon").style.transitionDelay = "0.1s";
   }
 }
+const wait = (delay = 0) =>
+  new Promise((resolve) => setTimeout(resolve, delay));
+
+const setVisible = (elementOrSelector, visible) =>
+  ((typeof elementOrSelector === "string"
+    ? document.querySelector(elementOrSelector)
+    : elementOrSelector
+  ).style.display = visible ? "block" : "none");
+
+const fadeOut = (elementOrSelector, duration) => {
+  const element =
+    typeof elementOrSelector === "string"
+      ? document.querySelector(elementOrSelector)
+      : elementOrSelector;
+
+  element.style.transition = `opacity ${duration / 2000}s`;
+  element.style.opacity = "0";
+
+  // Hide the element after the fade-out animation
+  wait(duration).then(() => {
+    setVisible(element, false);
+    element.style.transition = ""; // Reset the transition property
+    element.style.opacity = ""; // Reset the opacity property
+  });
+};
+
+setVisible("#page", false);
+setVisible("#loading", true);
+
+document.addEventListener("DOMContentLoaded", () =>
+  wait(1000).then(() => {
+    setVisible("#page", true);
+    fadeOut("#loading", 500); // 500 milliseconds = 0.5 seconds
+  })
+);

@@ -10,11 +10,10 @@
  */
 
 ?>
-
 	<footer class="container-fluid">
 		<div class="footer bg-craft blue-overlay row">
 			<div class="col-12 footer-logo text-center">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_primary3.png" alt="Cifton Logo" style>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/clifton_primary3.png" alt="Cifton Logo" style>
 			</div>
 			<div class="col-12">
 				<div class="container">
