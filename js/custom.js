@@ -40,6 +40,10 @@ function scrollFunction() {
     document.getElementById("menuIcon").style.transitionDelay = "0.1s";
   }
 }
+
+
+// page loader 
+
 const wait = (delay = 0) =>
   new Promise((resolve) => setTimeout(resolve, delay));
 

@@ -13,13 +13,13 @@
 <main class="container-fluid">
 <section> <!-- Big News -->
 <div class="row big-news bg-craft">
-            <div class="col-md-6 col-xl-8 order-md-2 square-box-small inset-shadow" style="background-image:  url(' http://seanc275.sg-host.com/wp-content/uploads/2023/08/4team10.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            <div class="col-md-6 col-xl-8 order-md-2 square-box-small inset-shadow" style="background-image:  url(' http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_7017-scaled.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
             </div>
             <div class="col-md-6 col-xl-4 order-md-1 square-box text-middle-box">
               <div class="inner-middle-box">
                 <h2>Our new menu has landed</h2>
-                  <a class="a-hover" href="">
-                    <button type="button" class="btn btn-primary">Primary</button>                  
+                  <a class="a-hover" href="https://seanc275.sg-host.com/sample-page/">
+                    <button type="button" class="btn-primary">Call to action</button>                  
                   </a>
               </div> 
             </div>
@@ -29,9 +29,9 @@
             </div>
             <div class="col-md-6 col-xl-4 square-box text-middle-box">
               <div class="inner-middle-box">
-                <h2>Our new menu has landed</h2>
-                <a class="a-hover" href="">
-                    <button type="button" class="btn btn-secondary">Secondary</button>                  
+                <h2>Join our team</h2>
+                <a class="a-hover" href="https://seanc275.sg-host.com/sample-page/">
+                    <button type="button" class="btn-secondary">Call to action</button>                  
                   </a>
               </div> 
             </div>
@@ -47,30 +47,30 @@
         <div class="col-12 container gallery-parent">
           <div class="gallery-col">
             <div class="gallery-img pink-border bg-craft pink-overlay">
-             <img  src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_7017-scaled.jpg" />
+             <img  src="http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_7017-scaled.jpg" />
             </div>
             <div class="gallery-img bg-craft pink-overlay gallery-portrait-left">
-              <img src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_4337-scaled-e1692009330431.jpg" />
+              <img src="http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_4337-scaled-e1692009330431.jpg" />
             </div>
           </div>
           <div class="gallery-col gallery-col-middle">
            <div class="gallery-img bg-craft pink-overlay">
-              <img src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2383-scaled.jpg" />
+              <img src="http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2383-scaled.jpg" />
             </div>
             </div>
           <div class="gallery-col hide-lg">
             <div class="gallery-img bg-craft pink-overlay gallery-portrait-right">
-            <img class="" src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_5855.jpg" />
+            <img class="" src="http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_5855.jpg" />
             </div>
             <div class="gallery-img bg-craft pink-overlay">
-              <img  src=" http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2464-HDR-Edit-scaled.jpg" />
+              <img  src="http://seanc275.sg-host.com/wp-content/uploads/2023/08/CD1_2464-HDR-Edit-scaled.jpg" />
             </div>
  
           </div>
         </div>
         <div class="btn-50 pt-5 pb-5">
  
-            <a class="a-hover" href="">
+            <a class="a-hover" href="https://seanc275.sg-host.com/sample-page/">
                 <button type="button" class="btn btn-light">See more pictures</button>
               </a>  
          
@@ -99,7 +99,7 @@
                         <h3 class="pt-4"> <?php the_title(); ?> </h3>
                         <div class="" >  <?php the_excerpt(); ?>  
                         </div>
-                        <a class="a-hover" href="">
+                        <a class="a-hover" href="<?php echo get_permalink() ?>">
                           <button type="button" class="btn btn-primary">more</button>
                         </a>  
                       </div>
@@ -123,7 +123,7 @@
                         <h3 class=""> <?php the_title(); ?> </h3>
                       <p class="d-none d-xxl-block">  <?php echo wp_trim_words(get_the_excerpt(), 8); ?>  
                       </p>
-                      <a class="a-hover" href="">
+                      <a class="a-hover" href="<?php echo get_permalink() ?>">
                           <button type="button" class="btn btn-primary">more</button>
                         </a>                        </div>
                     </div>

@@ -140,12 +140,12 @@ add_action( 'widgets_init', 'cloudsdale_master_widgets_init' );
 function cloudsdale_master_scripts() {
 	wp_enqueue_style( 'Bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array() );
 
-	wp_enqueue_style( 'cloudsdale-master-style', get_stylesheet_uri(), array(), $ver = 1.0 );
+	wp_enqueue_style( 'cloudsdale-master-style', get_stylesheet_uri(), array(), $ver = 1.2 );
 	wp_style_add_data( 'cloudsdale-master-style', 'rtl', 'replace' );
     wp_enqueue_script( 'Bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array(), '1.0.0', true );
 
-	wp_enqueue_script( 'cloudsdale-master-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CLOUDSDALE_MASTER_VERSION, true );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array(), CLOUDSDALE_MASTER_VERSION, true );
+	wp_enqueue_script( 'cloudsdale-master-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.1', true );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array(),'1.2', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

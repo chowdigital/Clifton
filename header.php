@@ -48,7 +48,7 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/logos/Clifton_secondary.png" alt="Cifton Logo" style>
 					</a>
 					<div id="bookBtn" style="top: 20px; transition-delay: 0.1s;">
-					<a class="btn btn-primary a-hover" href="#" role="button">Book<span class="d-none d-lg-inline"> a table</span></a>
+					<a id="resyButton-OvRYrrtmbzd4Uy7WbwJqW" href="https://resy.com/cities/ldn/the-clifton-nw8" class="btn btn-primary a-hover" role="button">Book<span class="d-none d-lg-inline"> a table</span></a>
 					</div>
 			</div>
 			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
