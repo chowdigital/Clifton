@@ -5,75 +5,18 @@ Author: Sean Cloudsdale
 Author URI: https://cloudsdale.co.uk/
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
-# Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
-# Components
-	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
-	- Jetpack infinite scroll
-# Utilities
-	- Accessibility
-	- Alignments
-
---------------------------------------------------------------*/
-
-// Import variables and mixins.
 @import "abstracts/abstracts";
 
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
-/* Normalize
---------------------------------------------- */
 @import "generic/normalize";
 
-/* Box sizing
---------------------------------------------- */
 @import "generic/box-sizing";
-/*-------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
+
 @import "base/base";
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
+
 @import "components/components";
-/*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
-/* Jetpack infinite scroll
---------------------------------------------- */
-//@import "plugins/jetpack/infinite-scroll";
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
-/* Accessibility
---------------------------------------------- */
+
 @import "utilities/accessibility";
-/* Alignments
---------------------------------------------- */
+
 @import "utilities/alignments";
 
 // ===========================================================================
@@ -91,6 +34,7 @@ Author URI: https://cloudsdale.co.uk/
 //  6. Buttons
 //  7. Blog
 //  8. Single blog post
+//  9. Default Page
 
 // https://my.corebook.io/OJUcHwxiAK3lzsU5Bc5DvKiXiHVz7xX0/loci-1/introduction
 
@@ -324,7 +268,7 @@ a:hover {
 
 .navbar-toggler-icon {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='https://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
@@ -429,9 +373,15 @@ a:hover {
   color: $craft;
   width: 100%;
 }
-.navbar-nav {
+.menu-menu-1-container {
+  height: calc(100% - 200px);
+  display: flex;
+  justify-content: space-around;
   ul {
+    display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
     li {
       padding: 10px;
       text-transform: uppercase;
@@ -446,8 +396,32 @@ a:hover {
     color: $pink;
   }
 }
-// off canvas end
 
+@media (min-width: $xl) {
+  .menu-menu-1-container {
+    ul {
+      display: flex;
+      li {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.main-navigation ul {
+  display: flex;
+}
+#offcanvasNav {
+  .modal-footer-logo,
+  .offcanvas-header {
+    height: 100px;
+  }
+  .modal-footer-logo {
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+  }
+}
 // ===========================================================================
 //  4. Footer
 // ===========================================================================
@@ -571,10 +545,18 @@ a:hover {
 .light-header {
   color: $craft;
   padding: 2em 0em;
+  a {
+    text-decoration: none;
+    color: $craft;
+  }
 }
 .dark-header {
   color: $blue-dark;
   padding: 2em 0em;
+  a {
+    text-decoration: none;
+    color: $blue-dark;
+  }
 }
 
 // ===========================================================================
@@ -728,7 +710,39 @@ a:hover {
     }
   }
 }
+/// Pagination
 
+#pagination-main {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.pagenav {
+  padding-top: 30px;
+}
+
+@media (min-width: $md) {
+  .blog-post-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .blog-post-list {
+    width: 45%;
+  }
+
+  .blog-post-list:nth-child(odd) {
+    margin-top: 6em;
+  }
+  .blog-post-list:nth-child(1) {
+    width: 100%;
+    margin-top: 0em;
+    .square-box::before {
+      padding-top: 50%;
+    }
+  }
+}
 // ===========================================================================
 //  8. Single Blog Post
 // ===========================================================================
@@ -782,13 +796,18 @@ a:hover {
 // ===========================================================================
 
 #page-main {
-  padding-top: 200px;
+  margin-top: -200px;
   padding-bottom: 200px;
 }
-
+.page-img-header {
+  height: 600px;
+  position: relative;
+  z-index: 1;
+}
 .page-container {
   position: relative;
   padding: 10px 10px;
+  z-index: 2;
 }
 .page-content {
   position: relative;
@@ -811,5 +830,76 @@ a:hover {
 @media (min-width: $xxl) {
   .page-container {
     padding: 200px 200px;
+  }
+  .page-img-header {
+    height: 800px;
+  }
+  #page-main {
+    margin-top: -300px;
+  }
+}
+
+// ===========================================================================
+//  9. Wordpress Styles
+// ===========================================================================
+.wp-block-gallery {
+  .wp-block-image:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #f4abb9;
+    mix-blend-mode: multiply;
+  }
+  .wp-block-image {
+    background: #dfc797;
+    background-repeat: repeat;
+    background-image: none;
+    background-image: url(../Clifton/assets/texture/craft.png);
+    background-repeat: repeat;
+    padding: 5px;
+    img {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+.wp-block-button {
+  padding-bottom: 10px;
+  width: 100%;
+}
+.wp-block-button__link {
+  border: 5px solid;
+  line-height: 10px;
+  border-image-outset: 0;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 100px;
+  border-image-repeat: repeat;
+  border-radius: 0px;
+  transition: color 0.4s;
+  background-repeat: repeat;
+  width: 100%;
+  border-image-outset: 3px;
+  border: 5px solid $blue;
+  background-color: $blue;
+  border-color: $pink;
+  border-image: url(../Clifton/assets/texture/pink-xs.png) 5;
+  background-image: url(../Clifton/assets/texture/blue-xs.png);
+  border-color: $pink;
+  background-color: $blue;
+  color: $craft;
+  &:visited,
+  &:hover {
+    color: $craft;
+  }
+}
+@media (min-width: $lg) {
+  .wp-block-button {
+    padding-bottom: 10px;
+    width: 50%;
   }
 }

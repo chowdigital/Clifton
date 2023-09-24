@@ -37,7 +37,6 @@ get_header();
 			?>
 			
 			
-		<a href="<?php echo get_home_url(); ?>/book"><button type="button" class="btn btn-primary">Book a table</button></a>
 
 		</div>
 
