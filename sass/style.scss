@@ -903,3 +903,18 @@ a:hover {
     width: 50%;
   }
 }
+
+//menu
+
+#menu-main {
+  padding-top: 400px;
+  padding-bottom: 200px;
+}
+.menu-container {
+  position: relative;
+  padding: 0px 10px;
+}
+.menu-content {
+  top: -100px;
+  position: relative;
+}
