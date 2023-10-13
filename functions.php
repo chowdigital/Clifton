@@ -114,25 +114,7 @@ function cloudsdale_master_content_width() {
 }
 add_action( 'after_setup_theme', 'cloudsdale_master_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function cloudsdale_master_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'cloudsdale-master' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'cloudsdale-master' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'cloudsdale_master_widgets_init' );
+
 
 /**
  * Enqueue scripts and styles.
@@ -140,7 +122,8 @@ add_action( 'widgets_init', 'cloudsdale_master_widgets_init' );
 function cloudsdale_master_scripts() {
 	wp_enqueue_style( 'Bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', array() );
 
-	wp_enqueue_style( 'cloudsdale-master-style', get_stylesheet_uri(), array(), $ver = 1.3 );
+	//wp_enqueue_style( 'cloudsdale-master-style', get_stylesheet_uri(), array(), $ver = 1.3 );
+	wp_enqueue_style('clousedale-minified-style', get_theme_file_uri('style.min.css') , array(), $ver = 1.1 );
 	wp_style_add_data( 'cloudsdale-master-style', 'rtl', 'replace' );
     wp_enqueue_script( 'Bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array(), '1.0.0', true );
 
@@ -186,3 +169,160 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Opening Time Start
+ */
+
+ function custom_theme_customize_register($wp_customize) {
+    // Create a section for opening times
+    $wp_customize->add_section('opening_times', array(
+        'title' => 'Opening Times',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_section('opening_times_kitchen', array(
+        'title' => 'Opening Times Kitchen',
+        'priority' => 31,
+    ));
+	$wp_customize->add_section('contact_info', array(
+        'title' => 'Contact Information',
+        'priority' => 32,
+    ));
+
+
+    // Add a control for each day of the week (Opening Times)
+    $days_of_week = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday');
+    foreach ($days_of_week as $day) {
+        $wp_customize->add_setting('opening_times_' . $day, array(
+            'default' => 'Closed', // Set the default value to 'Closed'
+        ));
+
+        $wp_customize->add_control('opening_times_' . $day, array(
+            'label' => ucfirst($day) . ' Opening Times',
+            'section' => 'opening_times',
+            'type' => 'text',
+        ));
+    }
+
+    // Add a control for kitchen opening times (Opening Times Kitchen)
+    $days_of_week_kitchen = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday');
+    foreach ($days_of_week_kitchen as $day) {
+        $wp_customize->add_setting('opening_times_kitchen_' . $day, array(
+            'default' => 'Closed', // Set the default value to 'Closed'
+        ));
+
+        $wp_customize->add_control('opening_times_kitchen_' . $day, array( // Added an underscore here
+            'label' => ucfirst($day) . ' Opening Times Kitchen',
+            'section' => 'opening_times_kitchen',
+            'type' => 'text',
+        ));
+    }
+// Add a control for contact information 
+$contact_info_fields = array('address', 'phone', 'email', 'facebook', 'instagram');
+foreach ($contact_info_fields as $info_field) {
+    $default_value = '';
+
+    if ($info_field === 'email') {
+        $default_value = 'example@example.com'; // Default email
+    } elseif ($info_field === 'phone') {
+        $default_value = '+1234567890'; // Default phone number
+    }
+
+    $wp_customize->add_setting('contact_info_' . $info_field, array(
+        'default' => $default_value,
+    ));
+
+    $wp_customize->add_control('contact_info_' . $info_field, array( 
+        'label' => ucfirst($info_field) . ' Contact Info',
+        'section' => 'contact_info',
+        'type' => 'text',
+    ));
+}
+
+}
+add_action('customize_register', 'custom_theme_customize_register');
+	
+//
+
+
+
+
+/**
+ * remove customiser options 
+ */ 
+
+function remove_customizer_sections($wp_customize) {
+    // Remove sections you don't want
+    
+    // Remove Header Image
+    $wp_customize->remove_section('header_image');
+    
+    // Remove Colors
+    $wp_customize->remove_section('colors');
+    
+    // Remove Background Image
+    $wp_customize->remove_section('background_image');
+    
+    // Remove Widgets
+    $wp_customize->remove_panel('widgets');
+    
+    // Remove Menus
+    $wp_customize->remove_panel('nav_menus');
+	    
+	// Remove Menus
+	$wp_customize->remove_panel('menus');
+    
+    // Remove Homepage Settings
+    $wp_customize->remove_section('static_front_page');
+    
+    // Remove Additional CSS
+    $wp_customize->remove_section('custom_css');
+}
+
+add_action('customize_register', 'remove_customizer_sections');
+
+// register new post type 
+
+
+/*section Menus */
+function create_posttype_again() {
+ 
+    register_post_type( 'menus',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Menus' ),
+                'singular_name' => __( 'Menu' )
+				
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'menu'),
+            'show_in_rest' => true,
+			'supports' => array( 'title', 'editor', 'revisions' ),
+			'menu_icon' => 'dashicons-smiley',
+			
+
+	
+ 
+        )
+    );
+		
+	
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype_again' );
+
+/* MENUS END*/
+
+
+/**
+ * Add Catagoies to custom menu section
+ */
+
+function reg_cat() {
+	register_taxonomy_for_object_type('category','menus');
+	
+}
+add_action('init', 'reg_cat');

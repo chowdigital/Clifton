@@ -40,12 +40,12 @@
     </section>
   <section class="row bg-craft blue-overlay">
     <div class="bg-dot">
-    <div class="container">
+    <div class="gallery-container">
       <div class="light-header text-center">
         <a href="<?php echo get_home_url(); ?>/gallery/"><h2>Gallery</h2></a>
         
       </div>
-        <div class="col-12 container gallery-parent">
+        <div class="col-12 gallery-parent">
           <div class="gallery-col">
             <div class="gallery-img pink-border bg-craft pink-overlay">
              <img  src="<?php the_field('photo_1'); ?>" />

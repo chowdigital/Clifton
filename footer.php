@@ -18,7 +18,7 @@
 			<div class="col-12">
 				<div class="container">
 					<div class="row">
-						<div class="col-12 col-sm-6 mb-5">
+					<div class="col-12 com-md-6 col-lg-3 mb-5">
 							<div class="form">
 							<h3>Join the Club</h3>
 
@@ -39,34 +39,51 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-12 col-xs-6 col-sm-3 offset-xl-2 col-xl-2 mb-5">
-							<ul>
-								<li><h5>Opening Times</h5></li>
-								<li>Monday</li>
-								<li>Tuesday</li>
-								<li>Wednesday</li>
-								<li>thursday</li>
-								<li>Friday</li>
-								<li>Saturday</li>
-								<li>Sunday</li>
+						<div class="col-12 com-md-6 col-lg-3 mb-5">
+						<?php
+							$days_of_week = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday');
+							$contact_info_fields = array('address', 'phone', 'email', 'facebook', 'instagram');
+
+							?>
+
+							<ul class="opening-times-list">
+							<li><h5>Opening Times</h5></li>
+
+								<?php foreach ($days_of_week as $day) : ?>
+									<?php $opening_time = get_theme_mod('opening_times_' . $day, 'Closed'); ?>
+									<li><strong><?php echo ucfirst($day) . ':</strong> <br> ' . esc_html($opening_time); ?></li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
-						<div class="col-12 col-xs-6 col-sm-3 col-xl-2 mb-5">
-							<ul>
+						<div class="col-12 com-md-6 col-lg-3 mb-5">
+							<ul class="opening-times-list">
+							<li><h5>Kitchen Times</h5></li>
+
+								<?php foreach ($days_of_week as $day) : ?>
+									<?php $opening_time_kitchen = get_theme_mod('opening_times_kitchen_' . $day, 'Closed'); ?>
+									<li><strong><?php echo ucfirst($day) . ':</strong> <br> ' . esc_html($opening_time_kitchen); ?></li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+						<div class="col-12 com-md-6 col-lg-3 mb-5">
+						<ul class="opening-times-list">
 								<li><h5>Contact</h5></li>
-								<li>Email</li>
-								<li>Phone</li>
-								<li>Address</li>
-								<li>Careers</li>
-								<li>Privicy</li>
 								
+								<?php foreach ($contact_info_fields as $info_field) : ?>
+									<?php $info_value = get_theme_mod('contact_info_' . $info_field); ?>
+									<li><strong><?php echo ucfirst($info_field) . ':</strong> <br> ' . esc_html($info_value); ?></li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 
- <!-- Cloudsdale -->
+
+ <div class="text-center bg-craft p-3">
+        			<a id="loci-logo" href=""><img  src="<?php echo get_template_directory_uri(); ?>/assets/logos/loci.png" alt=""></a>
+      			</div>
+				 <!-- Cloudsdale -->
  <div class="text-center" style="background: #000;"> 
     <a  href="https://cloudsdale.co.uk/">   <img class="m-2" src="https://cloudsdale.co.uk/wp-content/themes/Cloudsdale_2.0/assets/img/cloudsdale_logo.svg" alt="Cloudsdale" style="height:20px">
   </div></a>
