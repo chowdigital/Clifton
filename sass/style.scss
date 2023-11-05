@@ -32,7 +32,7 @@ Author URI: https://cloudsdale.co.uk/
 //  4. Footer
 //  5. Containers
 //  6. Buttons
-//  6.Gallery ???
+//  6. Gallery ???
 //  7. Blog
 //  8. Single blog post
 //  9. Default Page
@@ -383,10 +383,8 @@ li {
   width: 100%;
 }
 .menu-menu-1-container {
-  position: absolute;
-  top: 100px;
-  bottom: 100px;
-  height: calc(100vh - 200px);
+  position: relative;
+
   display: flex;
   justify-content: space-around;
   ul {
@@ -407,6 +405,18 @@ li {
   a:hover {
     color: $pink;
   }
+}
+
+.offcanvas-body::before {
+  position: fixed;
+  content: "";
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  border: none;
+  background: #136c91;
+  mix-blend-mode: multiply;
+  width: 400px;
 }
 
 @media (min-width: $xl) {
@@ -444,6 +454,13 @@ li {
   ul {
     list-style-type: none;
     margin: 0;
+    li {
+      font-size: 13px;
+      padding-bottom: 3px;
+      h5 {
+        font-size: 18px;
+      }
+    }
   }
 }
 .footer-logo {
@@ -455,6 +472,18 @@ li {
 }
 
 // form
+.form-floating {
+  input {
+    border: none;
+  }
+  .floating-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $craft;
+    border-radius: 0;
+    width: 100%;
+  }
+}
 .form {
   padding-bottom: 2em;
 }
@@ -470,13 +499,13 @@ li {
 .form-control:focus + label {
   color: $craft;
 }
-#floatingInput {
+.floating-input {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid $craft;
   border-radius: 0;
 }
-#floatingInput:focus {
+.floating-input:focus {
   outline: none !important;
 }
 
